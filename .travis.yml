@@ -1,5 +1,5 @@
 language:
-  - .net
+  - cs
 
 before_install:
   - pip install --user cpp-coveralls
@@ -9,9 +9,7 @@ addons:
     organization: "inv1noveritas"
 
 script:
-  - qmake
-  - make
-  - ./transport
+  - ./transport/NunitMain
 
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
